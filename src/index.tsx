@@ -98,9 +98,10 @@ const ReanimatedFlip = ({
             ],
         };
     }
-
+    //@ts-ignore
     const animatedStyleFront = useAnimatedStyle(runOnJS(animatedStyleFrontFn), [rotate, side, rotationFlip]);
 
+    //@ts-ignore
     const animatedStyleBack = useAnimatedStyle(runOnJS(animatedStyleBackFn), [rotate, side]);
 
     return (
