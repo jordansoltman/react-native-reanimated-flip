@@ -1,4 +1,4 @@
-import Animated, {Easing, useAnimatedStyle, useDerivedValue, withTiming, interpolate, runOnJs} from 'react-native-reanimated';
+import Animated, {Easing, useAnimatedStyle, useDerivedValue, withTiming, interpolate, runOnJS} from 'react-native-reanimated';
 import {StyleSheet, ViewStyle} from 'react-native';
 import React from 'react';
 
@@ -99,9 +99,9 @@ const ReanimatedFlip = ({
         };
     }
 
-    const animatedStyleFront = useAnimatedStyle(runOnJs(animatedStyleFrontFn), [rotate, side, rotationFlip]);
+    const animatedStyleFront = useAnimatedStyle(runOnJS(animatedStyleFrontFn), [rotate, side, rotationFlip]);
 
-    const animatedStyleBack = useAnimatedStyle(runOnJs(animatedStyleBackFn), [rotate, side]);
+    const animatedStyleBack = useAnimatedStyle(runOnJS(animatedStyleBackFn), [rotate, side]);
 
     return (
         <Animated.View style={StyleSheet.flatten([style, styles.container])}>
