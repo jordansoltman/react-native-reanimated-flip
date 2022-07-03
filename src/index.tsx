@@ -78,7 +78,7 @@ const ReanimatedFlip = ({
         });
     }, [side]);
 
-    const animatedStyleFrontFn = () => {
+    const animatedStyleFront = useAnimatedStyle(() => {
         return {
             opacity: opacityFront.value,
             transform: [
@@ -86,9 +86,9 @@ const ReanimatedFlip = ({
                 {...rotationFlip.value},
             ],
         };
-    }
+    }, [rotate, side, rotationFlip]);
 
-    const animatedStyleBackFn = () => {
+    const animatedStyleBack = useAnimatedStyle(() => {
         return {
             opacity: opacityBack.value,
             transform: [
@@ -97,12 +97,7 @@ const ReanimatedFlip = ({
                 {...rotationFlip.value},
             ],
         };
-    }
-    //@ts-ignore
-    const animatedStyleFront = useAnimatedStyle(animatedStyleFrontFn(), [rotate, side, rotationFlip]);
-
-    //@ts-ignore
-    const animatedStyleBack = useAnimatedStyle(animatedStyleBackFn(), [rotate, side]);
+    }, [rotate, side]);
 
     return (
         <Animated.View style={StyleSheet.flatten([style, styles.container])}>
