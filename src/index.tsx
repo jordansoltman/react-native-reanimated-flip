@@ -99,10 +99,10 @@ const ReanimatedFlip = ({
         };
     }
     //@ts-ignore
-    const animatedStyleFront = useAnimatedStyle(animatedStyleFrontFn(), [rotate, side, rotationFlip]);
+    const animatedStyleFront = useAnimatedStyle(animatedStyleFrontFn, [rotate, side, rotationFlip]);
 
     //@ts-ignore
-    const animatedStyleBack = useAnimatedStyle(animatedStyleBackFn(), [rotate, side]);
+    const animatedStyleBack = useAnimatedStyle(animatedStyleBackFn, [rotate, side]);
 
     return (
         <Animated.View style={StyleSheet.flatten([style, styles.container])}>
