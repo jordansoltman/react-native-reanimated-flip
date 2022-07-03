@@ -1,4 +1,4 @@
-import Animated, {Easing, useAnimatedStyle, useDerivedValue, withTiming, interpolate, runOnJS} from 'react-native-reanimated';
+import Animated, {Easing, useAnimatedStyle, useDerivedValue, withTiming, interpolate} from 'react-native-reanimated';
 import {StyleSheet, ViewStyle} from 'react-native';
 import React from 'react';
 
